@@ -158,6 +158,10 @@ public class SysDictController {
 	 */
 	@RequestMapping(value = "/getDictItems/{dictCode}", method = RequestMethod.GET)
 	public Result<List<DictModel>> getDictItems(@PathVariable("dictCode") String dictCode, @RequestParam(value = "sign",required = false) String sign,HttpServletRequest request) {
+		if (dictCode.contains("${sys_org_code}")){
+			LoginUser user = (LoginUser) SecurityUtils.getSubject().getPrincipal();
+			dictCode=dictCode.replace("${sys_org_code}","\""+user.getOrgCode()+"\"");
+		}
 		log.info(" dictCode : "+ dictCode);
 		Result<List<DictModel>> result = new Result<List<DictModel>>();
 		//update-begin-author:taoyan date:20220317 for: VUEN-222【安全机制】字典接口、online报表、online图表等接口，加一些安全机制
