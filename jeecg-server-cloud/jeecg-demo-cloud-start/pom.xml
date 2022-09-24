@@ -5,7 +5,7 @@
     <parent>
         <artifactId>jeecg-server-cloud</artifactId>
         <groupId>org.jeecgframework.boot</groupId>
-        <version>3.4.0</version>
+        <version>3.4.2</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -18,11 +18,18 @@
             <groupId>org.jeecgframework.boot</groupId>
             <artifactId>jeecg-boot-starter-cloud</artifactId>
         </dependency>
+        <!--system cloud api-->
+        <dependency>
+            <groupId>org.jeecgframework.boot</groupId>
+            <artifactId>jeecg-system-cloud-api</artifactId>
+        </dependency>
+        
         <dependency>
             <groupId>org.jeecgframework.boot</groupId>
             <artifactId>jeecg-boot-starter-job</artifactId>
         </dependency>
 
+        <!-- 引入demo模块 -->
         <dependency>
             <groupId>org.jeecgframework.boot</groupId>
             <artifactId>jeecg-module-demo</artifactId>
